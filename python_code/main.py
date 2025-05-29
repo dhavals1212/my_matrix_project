@@ -1,4 +1,4 @@
-from matrix_ops import scalar_multiplication, print_matrix
+from matrix_ops import scalar_multiplication, print_matrix, matrix_add
 
 if __name__ == "__main__":
     my_matrix = [
@@ -15,3 +15,19 @@ if __name__ == "__main__":
 
     print("\nMatrix after scalar multiplication by", my_scalar, ":")
     print_matrix(result_matrix)
+
+    print("\n--- Matrix Addition ---")
+    matrix_a = [[1, 0], [0, 1]]
+    matrix_b = [[5, 2], [3, 8]]
+
+    print("Matrix A:")
+    print_matrix(matrix_a)
+    print("\nMatrix B:")
+    print_matrix(matix_b)
+
+    try:
+        sum_matrix = matrix_add(matrix_a, matrix_b)
+        print("\nSum of A + B:")
+        print_matrix(sum_matrix)
+    except ValueError as e:
+        print(f"Error: {e}")
