@@ -1,0 +1,20 @@
+#include "matrix_ops.h" //include your custom matrix operations header
+
+int main() {
+  std::vector<std::vector<int>> myMatrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+  };
+  int myScalar = 2;
+
+  std::cout << "Original Matrix:" << std::endl;
+  printMatrix(myMatrix);
+
+  std::vector<std::vector<int>> resultMatrix = scalarMultiply(myMatrix, myScalar);
+
+  std::cout << "Matrix after multiplication by " << myScalar << ":" << std::endl;
+  printMatrix(resultMatrix);
+
+  return 0;
+}
