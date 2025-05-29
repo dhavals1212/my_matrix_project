@@ -1,4 +1,5 @@
 #include "matrix_ops.h" //include your own header first
+#include <stdexcept> //for std::invalid argument
 
 //function definition for scalarMultiply
 std::vector<std::vector<int>> scalarMultiply(const std::vector<std::vector<int>>& matrix, int scalar) {
@@ -28,4 +29,27 @@ void printMatrix(const std::vector<std::vector<int>>& matrix) {
     }
     std::cout << std::endl;
   }
+}
+
+//function definition for matrix_add
+std::vector<std::vector<int>> matrix_add(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>&  matrix_b) {
+  if (matrix_a.empty() || matrix_a[0].empty() || matrix_b.empty() || matrix_b[0].empty()) {
+    throw std::invalid_argument("Input matrices for addition cannot be empty.");
+  }
+  if (matrix_a.size() != matrix_b.size() || matrix_a[0].size() != matrix_b[0].size()) {
+    throw std::invalid_argument("Matrices for addition must have the same dimensions.");
+  }
+  
+
+  int rows = matrix_a.size();
+  int cols = matrix_a[0].size();
+
+  std::vector<std::vector<int>> result(rows, std::vector<int>(cols));
+
+  for (int r=0; r<rows; ++r) {
+    for (int c=0; c<cols; ++c) {
+      result[r][c] = matrix_a[r][c] + matrix_b[r][c];
+    }
+  }
+  return result;
 }
