@@ -19,3 +19,14 @@ resultMatrix = scalarMultiplyMatrix(myMatrix, myScalar);
 
 disp(['Matrix after scalar multiplication by ', num2str(myScalar), ':']);
 disp(resultMatrix);
+
+myMatrix2 = [
+	     2, 4, 6;
+	     6, 8, 10;
+	     10, 12, 14;
+];
+
+disp('The addition between two matrices will be\n');
+resultMatrix2 = matrixAddition(myMatrix, myMatrix2);
+
+disp(resultMatrix2);
