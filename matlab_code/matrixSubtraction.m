@@ -1,4 +1,4 @@
-function resultMatrix = matrixSubtraction(matrixA + matrixB)
-  resultMatrix = matrixA - matrixB
+function resultMatrix = matrixSubtraction(matrixA, matrixB)
+  resultMatrix = matrixA - matrixB;
 end
 

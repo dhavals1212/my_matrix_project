@@ -26,12 +26,17 @@ myMatrix2 = [
 	     10, 12, 14;
 ];
 
-disp('The addition between two matrices will be\n');
+disp('The addition between two matrices will be');
 resultMatrix2 = matrixAddition(myMatrix, myMatrix2);
 
 disp(resultMatrix2);
 
-disp('The subtraction between two matrices will be\n');
+disp('The subtraction between two matrices will be');
 resultMatrix3 = matrixSubtraction(myMatrix, myMatrix2);
 
 disp(resultMatrix3);
+
+disp('The multiplication between two matrices will be');
+resultMatrix4 = matrixMultiplication(myMatrix, myMatrix2);
+
+disp(resultMatrix4);

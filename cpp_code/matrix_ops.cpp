@@ -57,10 +57,10 @@ std::vector<std::vector<int>> matrix_add(const std::vector<std::vector<int>>& ma
 //function definition for matrix_subtract
 std::vector<std::vector<int>> matrix_subtract(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>&  matrix_b) {
   if (matrix_a.empty() || matrix_a[0].empty() || matrix_b.empty() || matrix_b[0].empty()) {
-    throw std::invalid_argument("Input matrices for addition cannot be empty.");
+    throw std::invalid_argument("Input matrices for subtraction cannot be empty.");
   }
   if (matrix_a.size() != matrix_b.size() || matrix_a[0].size() != matrix_b[0].size()) {
-    throw std::invalid_argument("Matrices for addition must have the same dimensions.");
+    throw std::invalid_argument("Matrices for subtraction must have the same dimensions.");
   }
   
 
@@ -72,6 +72,33 @@ std::vector<std::vector<int>> matrix_subtract(const std::vector<std::vector<int>
   for (int r=0; r<rows; ++r) {
     for (int c=0; c<cols; ++c) {
       result[r][c] = matrix_a[r][c] - matrix_b[r][c];
+    }
+  }
+  return result;
+}
+
+//function definition for matrix_multiplication
+std::vector<std::vector<int>> matrix_multiplication(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>&  matrix_b) {
+  if (matrix_a.empty() || matrix_a[0].empty() || matrix_b.empty() || matrix_b[0].empty()) {
+    throw std::invalid_argument("Input matrices for multiplication cannot be empty.");
+  }
+  if (matrix_a[0].size() != matrix_b.size()) {
+    throw std::invalid_argument("Matrices for multiplication must have the same dimension for column of first matrix and row of second matrix.");
+  }
+  
+
+  int rows_a = matrix_a.size();
+  int cols_a = matrix_a[0].size();
+  int rows_b = matrix_b.size();
+  int cols_b = matrix_b[0].size();
+
+  std::vector<std::vector<int>> result(rows_a, std::vector<int>(cols_b, 0));
+
+  for (int r=0; r<rows_a; ++r) {
+    for (int c=0; c<cols_b; ++c) {
+      for (int k=0; k<cols_a; ++k) {
+	result[r][c] += matrix_a[r][k] * matrix_b[k][c];
+      }
     }
   }
   return result;

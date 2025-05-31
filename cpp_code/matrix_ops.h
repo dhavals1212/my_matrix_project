@@ -16,4 +16,7 @@ std::vector<std::vector<int>> matrix_add(const std::vector<std::vector<int>>& ma
 //function to subtract two matrices
 std::vector<std::vector<int>> matrix_subtract(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>& matrix_b);
 
+//function to do matrix multiplication
+std::vector<std::vector<int>> matrix_multiplication(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>& matrix_b);
+
 #endif // MATRIX_OPS_H

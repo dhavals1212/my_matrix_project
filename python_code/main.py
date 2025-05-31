@@ -1,4 +1,4 @@
-from matrix_ops import scalar_multiplication, print_matrix, matrix_add, matrix_subtract
+from matrix_ops import scalar_multiplication, print_matrix, matrix_add, matrix_subtract, matrix_multiplication
 
 if __name__ == "__main__":
     my_matrix = [
@@ -36,5 +36,12 @@ if __name__ == "__main__":
         sub_matrix = matrix_subtract(matrix_a, matrix_b)
         print("\nSubtraction of A - B:")
         print_matrix(sub_matrix)
+    except ValueError as e:
+        print(f"Error: {e}")
+
+    try:
+        mat_multipli = matrix_multiplication(matrix_a, matrix_b)
+        print("\nMultiplication between A and B:")
+        print_matrix(mat_multipli)
     except ValueError as e:
         print(f"Error: {e}")

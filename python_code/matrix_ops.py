@@ -51,3 +51,22 @@ def matrix_subtract(matrix1, matrix2):
             new_row.append(matrix1[r][c] - matrix2[r][c])
         result.append(new_row)
     return result
+
+def matrix_multiplication(matrix1, matrix2):
+    """Multiplies two matrices."""
+    if not matrix1 or not matrix2:
+        raise ValueError("Matrices must be non-empty.")
+
+    rows_1 = len(matrix1)
+    cols_1 = len(matrix1[0])
+    rows_2 = len(matrix2)
+    cols_2 = len(matrix2[0])
+    result = [[0 for _ in range(cols_2) ] for _ in range(rows_1)]
+
+    if len(matrix1[0]) != len(matrix2):
+        raise ValueError("Matrices in multiplication must have m*n and n*p structure where results would be m*p.")
+    for r in range(rows_1):
+        for c in range(cols_2):
+            for k in range(cols_1):
+                result[r][c] += matrix1[r][k] * matrix2[k][c]
+    return result

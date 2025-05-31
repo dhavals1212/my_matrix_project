@@ -1,4 +1,4 @@
-function resultMatrix = matrixAddition(matrixA + matrixB)
-  resultMatrix = matrixA + matrixB
+function resultMatrix = matrixAddition(matrixA, matrixB)
+  resultMatrix = matrixA + matrixB;
 end
 
