@@ -1,4 +1,4 @@
-from matrix_ops import scalar_multiplication, print_matrix, matrix_add
+from matrix_ops import scalar_multiplication, print_matrix, matrix_add, matrix_subtract
 
 if __name__ == "__main__":
     my_matrix = [
@@ -23,11 +23,18 @@ if __name__ == "__main__":
     print("Matrix A:")
     print_matrix(matrix_a)
     print("\nMatrix B:")
-    print_matrix(matix_b)
+    print_matrix(matrix_b)
 
     try:
         sum_matrix = matrix_add(matrix_a, matrix_b)
         print("\nSum of A + B:")
         print_matrix(sum_matrix)
+    except ValueError as e:
+        print(f"Error: {e}")
+
+    try:
+        sub_matrix = matrix_subtract(matrix_a, matrix_b)
+        print("\nSubtraction of A - B:")
+        print_matrix(sub_matrix)
     except ValueError as e:
         print(f"Error: {e}")

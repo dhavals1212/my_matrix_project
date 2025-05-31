@@ -30,3 +30,8 @@ disp('The addition between two matrices will be\n');
 resultMatrix2 = matrixAddition(myMatrix, myMatrix2);
 
 disp(resultMatrix2);
+
+disp('The subtraction between two matrices will be\n');
+resultMatrix3 = matrixSubtraction(myMatrix, myMatrix2);
+
+disp(resultMatrix3);

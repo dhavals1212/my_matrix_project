@@ -13,4 +13,7 @@ void printMatrix(const std::vector<std::vector<int>>& matrix);
 //function to add two matrices
 std::vector<std::vector<int>> matrix_add(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>& matrix_b);
 
+//function to subtract two matrices
+std::vector<std::vector<int>> matrix_subtract(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>& matrix_b);
+
 #endif // MATRIX_OPS_H

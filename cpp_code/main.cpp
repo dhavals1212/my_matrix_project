@@ -34,6 +34,22 @@ int main() {
   std::cout << "2nd matrix for addition: " << std::endl;
   printMatrix(myMatrixB);
 
+  std::vector<std::vector<int>> myMatrixC = {
+    {1, 7, 11},
+    {11, 15, 19},
+    {19, 23, 27}
+  };
+  std::cout << "1st matrix for subtraction: " << std::endl;
+  printMatrix(myMatrixC);
+
+  std::vector<std::vector<int>> myMatrixD = {
+    {1, 2, 4},
+    {4, 5, 7},
+    {7, 8, 10}
+  };
+  std::cout << "2nd matrix for subtraction: " << std::endl;
+  printMatrix(myMatrixD);
+
   try {
     std::vector<std::vector<int>> resultMatrixadd = matrix_add(myMatrixA, myMatrixB);
     std::cout << "\nResult of matrix addition A + B:" << std::endl;
@@ -46,6 +62,20 @@ int main() {
     
   } catch (const std::invalid_argument& e) {
     std::cerr << "Error during matrix addition: " << e.what() << std::endl;
+  }
+
+  try {
+    std::vector<std::vector<int>> resultMatrixsubtract = matrix_subtract(myMatrixC, myMatrixD);
+    std::cout << "\nResult of matrix addition C + D:" << std::endl;
+    printMatrix(resultMatrixsubtract);
+
+    //Example of additional error handling
+    //std::vector<std::vector<int>> matrixC = {{1}};
+    //std::cout << "\nAttempting to add incompatible matrices:" << std::endl;
+    //std::vector<std::vector<int>> incompatibleResult = matrix_add(myMatrixA, matrixC);
+    
+  } catch (const std::invalid_argument& e) {
+    std::cerr << "Error during matrix subtraction: " << e.what() << std::endl;
   }
 
   return 0;
