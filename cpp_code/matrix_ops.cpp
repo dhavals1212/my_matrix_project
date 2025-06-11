@@ -103,3 +103,23 @@ std::vector<std::vector<int>> matrix_multiplication(const std::vector<std::vecto
   }
   return result;
 }
+
+//function definition for transpose matrix
+std::vector<std::vector<int>> tran(const std::vector<std::vector<int>>& matrix) {
+  if (matrix.empty()) {
+    throw std::invalid_argument("Input matrix cannot be empty.");
+  }
+
+  int rows = matrix.size();
+  int cols = matrix[0].size();
+
+  std::vector<std::vector<int>> result(rows, std::vector<int>(cols));
+
+  for (int r=0; r<rows; r++) {
+    for (int c=0; c<cols; c++) {
+      result[r][c] = matrix[c][r];
+    }
+  }
+
+  return result;
+}

@@ -70,3 +70,20 @@ def matrix_multiplication(matrix1, matrix2):
             for k in range(cols_1):
                 result[r][c] += matrix1[r][k] * matrix2[k][c]
     return result
+
+def tran(matrix):
+    "Adjoint"
+    if not matrix:
+        raise ValueError("Matrix must be non-empty.")
+
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    result = []
+
+    for r in range(rows):
+        new_row = []
+        for c in range(cols):
+            new_row.append(matrix[c][r])
+        result.append(new_row)
+    return result;

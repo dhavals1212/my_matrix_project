@@ -91,5 +91,13 @@ int main() {
   } catch (const std::invalid_argument& e) {
     std::cerr << "Error during matrix multiplicaction: " << e.what() << std::endl;
   }
+
+  try {
+    std::vector<std::vector<int>> resultingTranspose = tran(myMatrix);
+    std::cout << "\nTranspose of a matrix:" << std::endl;
+    printMatrix(resultingTranspose);
+  } catch (const std::invalid_argument& e) {
+    std::cerr << "Error during transposing of matrix: " << e.what() << std::endl;
+  }
   return 0;
 }

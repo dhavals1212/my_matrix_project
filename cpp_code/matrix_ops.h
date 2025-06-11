@@ -19,4 +19,7 @@ std::vector<std::vector<int>> matrix_subtract(const std::vector<std::vector<int>
 //function to do matrix multiplication
 std::vector<std::vector<int>> matrix_multiplication(const std::vector<std::vector<int>>& matrix_a, const std::vector<std::vector<int>>& matrix_b);
 
+//function to find transpose of a matrix
+std::vector<std::vector<int>> tran(const std::vector<std::vector<int>>& matrix);
+
 #endif // MATRIX_OPS_H

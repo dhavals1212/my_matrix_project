@@ -40,3 +40,8 @@ disp('The multiplication between two matrices will be');
 resultMatrix4 = matrixMultiplication(myMatrix, myMatrix2);
 
 disp(resultMatrix4);
+
+disp('Transpose of a matrix will be');
+resultTran = transpose(myMatrix);
+
+disp(resultTran);
